@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33417.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop", "AutoRepairShop\AutoRepairShop.csproj", "{EC42B1A4-AA03-468D-AF93-CC6E503169A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop.Logic", "AutoRepairShop.Logic\AutoRepairShop.Logic.csproj", "{32DC9A06-145F-4E02-B349-2B81B67DB390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop.UI", "AutoRepairShop.UI\AutoRepairShop.UI.csproj", "{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC42B1A4-AA03-468D-AF93-CC6E503169A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC42B1A4-AA03-468D-AF93-CC6E503169A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC42B1A4-AA03-468D-AF93-CC6E503169A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC42B1A4-AA03-468D-AF93-CC6E503169A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32DC9A06-145F-4E02-B349-2B81B67DB390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32DC9A06-145F-4E02-B349-2B81B67DB390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32DC9A06-145F-4E02-B349-2B81B67DB390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32DC9A06-145F-4E02-B349-2B81B67DB390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
