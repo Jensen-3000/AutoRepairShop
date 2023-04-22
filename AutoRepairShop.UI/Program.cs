@@ -39,6 +39,19 @@ while (true)
             LastInspectionDate = lastInspectionDate
         };
 
+        // Checks if car needs an inspection
+        CarInspectionChecker carInspectionChecker = new CarInspectionChecker();
+        bool needsInspection = carInspectionChecker.IsInspectionRequired(car);
+        if (needsInspection)
+        {
+            Console.WriteLine($"{UserPrompts.NeedsInspection}");
+        }
+        else
+        {
+            Console.WriteLine($"{UserPrompts.DoesntNeedsInspection}");
+
+        }
+
         // Checks if the car is being recalled because of defects
         RecalledCars recalledCarsDatabase = new RecalledCars();
         RecallChecker carRecallChecker = new RecallChecker(recalledCarsDatabase);
