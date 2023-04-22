@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33417.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop.Logic", "AutoRepairShop.Logic\AutoRepairShop.Logic.csproj", "{32DC9A06-145F-4E02-B349-2B81B67DB390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRepairShop.Logic", "AutoRepairShop.Logic\AutoRepairShop.Logic.csproj", "{32DC9A06-145F-4E02-B349-2B81B67DB390}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop.ConsoleUI", "AutoRepairShop.UI\AutoRepairShop.ConsoleUI.csproj", "{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop.ConsoleUI", "AutoRepairShop.ConsoleUI\AutoRepairShop.ConsoleUI.csproj", "{66B8AFB1-4409-40B0-95E0-FB460E7F19BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRepairShop.Test", "AutoRepairShop.Test\AutoRepairShop.Test.csproj", "{26875C3B-DB7B-4180-A85E-2B9C0C4357C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoRepairShop.Test", "AutoRepairShop.Test\AutoRepairShop.Test.csproj", "{26875C3B-DB7B-4180-A85E-2B9C0C4357C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
