@@ -11,4 +11,8 @@
     <ProjectReference Include="..\AutoRepairShop.Logic\AutoRepairShop.Logic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ConsoleUtils\" />
+  </ItemGroup>
+
 </Project>
