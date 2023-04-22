@@ -9,6 +9,9 @@
         public const string CarLastInspectionDate = "Indtast bilens sidste syns dato (dd-MM-yyyy)" +
                                                     "\nHvis bilen ikke har været synet før tast 0000: ";
         #endregion
+
+        public const string Defect = "Bilen har følgende fabriksfejl";
+
         public const string PressToQuitProgram = "Tryk 'q' for at afslutte eller en anden vilkårlig tast for at genstarte programmet.";
     }
 }

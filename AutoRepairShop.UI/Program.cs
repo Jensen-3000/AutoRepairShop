@@ -1,4 +1,5 @@
 ﻿using AutoRepairShop.Logic.Models;
+using AutoRepairShop.Logic.Utilities;
 using AutoRepairShop.UI.Prompts;
 
 while (true)
@@ -9,15 +10,44 @@ while (true)
     DateValidator dateValidator = new DateValidator();
     try
     {
-        string brandInput = GetInputFromUser(UserPrompts.CarBrand);
+        // Asks Car brand
+        Console.Write(UserPrompts.CarBrand);
+        string brandInput = Console.ReadLine();
+        brandInput = StringUtil.CleanString(brandInput);
 
-        string modelInput = GetInputFromUser(UserPrompts.CarModel);
+        // Asks for Car Model
+        Console.Write(UserPrompts.CarModel);
+        string modelInput = Console.ReadLine();
+        modelInput = StringUtil.CleanString(modelInput);
 
-        string yearInput = GetInputFromUser(UserPrompts.CarYear);
+        // Asks for Car Year
+        Console.Write(UserPrompts.CarYear);
+        string yearInput = Console.ReadLine();
         DateTime modelYear = dateValidator.GetCarModelYear(yearInput, dateMinValue, dateMaxValue);
 
-        string inspectionDateInput = GetInputFromUser(UserPrompts.CarLastInspectionDate);
+        // Asks for last inspection date
+        Console.Write(UserPrompts.CarLastInspectionDate);
+        string inspectionDateInput = Console.ReadLine();
         DateTime lastInspectionDate = dateValidator.GetLastInspectionDate(inspectionDateInput, dateMinValue, dateMaxValue);
+
+        // Create car object and puts data into it
+        Car car = new Car
+        {
+            Brand = brandInput,
+            Model = modelInput,
+            ModelYear = modelYear,
+            LastInspectionDate = lastInspectionDate
+        };
+
+        // Checks if the car is being recalled because of defects
+        RecalledCars recalledCarsDatabase = new RecalledCars();
+        RecallChecker carRecallChecker = new RecallChecker(recalledCarsDatabase);
+        RecalledCar matchingRecalledCar = carRecallChecker.FindRecalledCar(car);
+
+        if (matchingRecalledCar != null)
+        {
+            Console.WriteLine($"{UserPrompts.Defect}: {matchingRecalledCar.FactoryDefect}");
+        }
     }
     catch (Exception ex)
     {
@@ -26,10 +56,4 @@ while (true)
     Console.WriteLine(UserPrompts.PressToQuitProgram);
     if (Console.ReadKey().Key == ConsoleKey.Q) break;
     Console.Clear();
-}
-
-string GetInputFromUser(string prompt)
-{
-    Console.Write(prompt);
-    return Console.ReadLine().ToLower().Trim();
 }
