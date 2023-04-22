@@ -14,9 +14,9 @@ namespace AutoRepairShop.Logic.Models
                 throw new FormatException(ErrorMessagesLogic.CarModelYearFormat);
             }
 
-            if (modelYear.Year < minYear || modelYear.Year > maxYear)
+            else if (modelYear.Year < minYear || modelYear.Year > maxYear)
             {
-                throw new ArgumentOutOfRangeException(string.Format(ErrorMessagesLogic.CarModelYearRange, minYear, maxYear));
+                throw new ArgumentOutOfRangeException("",string.Format(ErrorMessagesLogic.CarModelYearRange, minYear, maxYear));
             }
             return modelYear;
         }
@@ -30,14 +30,14 @@ namespace AutoRepairShop.Logic.Models
                 lastInspectionDate = DateTime.MinValue;
             }
 
-            if (!DateTime.TryParseExact(input, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out lastInspectionDate))
+            else if (!DateTime.TryParseExact(input, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out lastInspectionDate))
             {
                 throw new FormatException(ErrorMessagesLogic.LastInspectionDateFormat);
             }
 
-            if (lastInspectionDate.Year < minYear || lastInspectionDate.Year > maxYear)
+            else if (lastInspectionDate.Year < minYear || lastInspectionDate.Year > maxYear)
             {
-                throw new ArgumentOutOfRangeException(string.Format(ErrorMessagesLogic.LastInspectionDateRange, minYear, maxYear));
+                throw new ArgumentOutOfRangeException("",string.Format(ErrorMessagesLogic.LastInspectionDateRange, minYear, maxYear));
             }
             return lastInspectionDate;
         }
