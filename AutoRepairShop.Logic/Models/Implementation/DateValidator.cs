@@ -1,7 +1,7 @@
 ﻿using AutoRepairShop.Logic.ErrorMessages;
 using System.Globalization;
 
-namespace AutoRepairShop.Logic.Models
+namespace AutoRepairShop.Logic.Models.Implementation
 {
     public struct DateValidator
     {
@@ -16,7 +16,7 @@ namespace AutoRepairShop.Logic.Models
 
             else if (modelYear.Year < minYear || modelYear.Year > maxYear)
             {
-                throw new ArgumentOutOfRangeException("",string.Format(ErrorMessagesLogic.CarModelYearRange, minYear, maxYear));
+                throw new ArgumentOutOfRangeException("", string.Format(ErrorMessagesLogic.CarModelYearRange, minYear, maxYear));
             }
             return modelYear;
         }
@@ -37,7 +37,7 @@ namespace AutoRepairShop.Logic.Models
 
             else if (lastInspectionDate.Year < minYear || lastInspectionDate.Year > maxYear)
             {
-                throw new ArgumentOutOfRangeException("",string.Format(ErrorMessagesLogic.LastInspectionDateRange, minYear, maxYear));
+                throw new ArgumentOutOfRangeException("", string.Format(ErrorMessagesLogic.LastInspectionDateRange, minYear, maxYear));
             }
             return lastInspectionDate;
         }

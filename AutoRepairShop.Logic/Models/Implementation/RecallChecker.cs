@@ -1,6 +1,6 @@
 ﻿using AutoRepairShop.Logic.Utilities;
 
-namespace AutoRepairShop.Logic.Models
+namespace AutoRepairShop.Logic.Models.Implementation
 {
     public class RecallChecker
     {
@@ -23,5 +23,4 @@ namespace AutoRepairShop.Logic.Models
                    car.ModelYear < recalledCarItem.RecallThresholdDate;
         }
     }
-
 }

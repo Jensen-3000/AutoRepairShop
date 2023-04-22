@@ -1,4 +1,6 @@
-﻿using AutoRepairShop.Logic.Models;
+﻿using AutoRepairShop.Logic.Factories.Implementation;
+using AutoRepairShop.Logic.Factories.Interfaces;
+using AutoRepairShop.Logic.Models.Implementation;
 using AutoRepairShop.Logic.Utilities;
 using AutoRepairShop.UI.Prompts;
 
@@ -7,9 +9,16 @@ while (true)
     int dateMinValue = 1900;
     int dateMaxValue = DateTime.Now.Year + 1;
 
-    DateValidator dateValidator = new DateValidator();
+    #region Init Factories
+    IDateValidatorFactory dateValidatorFactory = new DateValidatorFactory();
+    ICarInspectionCheckerFactory carInspectionCheckerFactory = new CarInspectionCheckerFactory();
+    ICarFactory carFactory = new CarFactory();
+    IRecallCheckerFactory recallCheckerFactory = new RecallCheckerFactory();
+    #endregion
+
     try
     {
+        #region User inputs for Brand, Model, Year and last inspection date
         // Asks Car brand
         Console.Write(UserPrompts.CarBrand);
         string brandInput = Console.ReadLine();
@@ -23,24 +32,20 @@ while (true)
         // Asks for Car Year
         Console.Write(UserPrompts.CarYear);
         string yearInput = Console.ReadLine();
-        DateTime modelYear = dateValidator.GetCarModelYear(yearInput, dateMinValue, dateMaxValue);
+        DateTime modelYear = dateValidatorFactory.Create().GetCarModelYear(yearInput, dateMinValue, dateMaxValue);
 
         // Asks for last inspection date
         Console.Write(UserPrompts.CarLastInspectionDate);
         string inspectionDateInput = Console.ReadLine();
-        DateTime lastInspectionDate = dateValidator.GetLastInspectionDate(inspectionDateInput, dateMinValue, dateMaxValue);
+        DateTime lastInspectionDate = dateValidatorFactory.Create().GetLastInspectionDate(inspectionDateInput, dateMinValue, dateMaxValue);
+        #endregion
+
 
         // Create car object and puts data into it
-        Car car = new Car
-        {
-            Brand = brandInput,
-            Model = modelInput,
-            ModelYear = modelYear,
-            LastInspectionDate = lastInspectionDate
-        };
+        Car car = carFactory.Create(brandInput, modelInput, modelYear, lastInspectionDate);
 
-        // Checks if car needs an inspection
-        CarInspectionChecker carInspectionChecker = new CarInspectionChecker();
+        #region Checks if car needs an inspection
+        CarInspectionChecker carInspectionChecker = carInspectionCheckerFactory.Create();
         bool needsInspection = carInspectionChecker.IsInspectionRequired(car);
         if (needsInspection)
         {
@@ -49,24 +54,29 @@ while (true)
         else
         {
             Console.WriteLine($"{UserPrompts.DoesntNeedsInspection}");
-
         }
+        #endregion
 
-        // Checks if the car is being recalled because of defects
+
+        #region Checks if the car is being recalled because of defects
         RecalledCars recalledCarsDatabase = new RecalledCars();
-        RecallChecker carRecallChecker = new RecallChecker(recalledCarsDatabase);
+        RecallChecker carRecallChecker = recallCheckerFactory.Create(recalledCarsDatabase);
         RecalledCar matchingRecalledCar = carRecallChecker.FindRecalledCar(car);
-
         if (matchingRecalledCar != null)
         {
             Console.WriteLine($"{UserPrompts.Defect}: {matchingRecalledCar.FactoryDefect}");
         }
+        #endregion
+
     }
     catch (Exception ex)
     {
         Console.WriteLine($"Fejl: {ex.Message}");
     }
+
+    #region Prompts user if they want to quit the program
     Console.WriteLine(UserPrompts.PressToQuitProgram);
     if (Console.ReadKey().Key == ConsoleKey.Q) break;
     Console.Clear();
+    #endregion
 }

@@ -1,4 +1,4 @@
-﻿namespace AutoRepairShop.Logic.Models
+﻿namespace AutoRepairShop.Logic.Models.Implementation
 {
     public struct CarInspectionChecker
     {
