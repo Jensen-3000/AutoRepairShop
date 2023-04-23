@@ -2,7 +2,7 @@
 
 namespace AutoRepairShop.Logic.Models.Implementation
 {
-    public class RecalledCars : IRecalledCars
+    public class RecalledCarsData : IRecalledCarsData
     {
         public RecalledCar[] Cars { get; } = new RecalledCar[]
         {

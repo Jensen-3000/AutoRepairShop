@@ -2,7 +2,7 @@
 
 namespace AutoRepairShop.Logic.Models.Interfaces
 {
-    public interface IRecalledCars
+    public interface IRecalledCarsData
     {
         RecalledCar[] Cars { get; }
     }
