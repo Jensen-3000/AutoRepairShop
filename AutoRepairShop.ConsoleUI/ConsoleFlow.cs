@@ -45,11 +45,11 @@ namespace AutoRepairShop.ConsoleUI
         {
             Console.Write(UserPrompts.CarBrand);
             string brandInput = Console.ReadLine();
-            brandInput = StringUtil.CleanString(brandInput);
+            brandInput = brandInput.CleanString();
 
             Console.Write(UserPrompts.CarModel);
             string modelInput = Console.ReadLine();
-            modelInput = StringUtil.CleanString(modelInput);
+            modelInput = modelInput.CleanString(); ;
 
             Console.Write(UserPrompts.CarYear);
             string yearInput = Console.ReadLine();
@@ -75,7 +75,7 @@ namespace AutoRepairShop.ConsoleUI
             {
                 Console.WriteLine($"{UserPrompts.DoesntNeedsInspection}");
             }
-
+            // todo move this #lol
             RecalledCarsData recalledCarsDatabase = new RecalledCarsData();
             RecallChecker carRecallChecker = recallCheckerFactory.Create(recalledCarsDatabase);
             RecalledCar matchingRecalledCar = carRecallChecker.FindRecalledCar(car);
