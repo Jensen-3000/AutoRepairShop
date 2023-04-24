@@ -4,11 +4,11 @@ using AutoRepairShop.Logic.Models.Interfaces;
 
 namespace AutoRepairShop.Logic.Factories.Implementation
 {
-    public class RecallCheckerFactory : IRecallCheckerFactory
+    public class RecalledCarsDataFactory : IRecalledCarsDataFactory
     {
-        public RecallChecker Create(IRecalledCarsData database)
+        public IRecalledCarsData Create()
         {
-            return new RecallChecker(database);
+            return new RecalledCarsData();
         }
     }
 }

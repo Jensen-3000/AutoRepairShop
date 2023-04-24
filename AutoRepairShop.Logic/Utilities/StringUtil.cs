@@ -6,7 +6,7 @@ namespace AutoRepairShop.Logic.Utilities
     {
         public static string CleanString(this string input)
         {
-            // Remove spaces, punctuation and convert the string to lowercase
+            // Fjerner whitespace, punktum og converter til lowercase.
             return Regex.Replace(input, @"[\s\p{P}]", "").ToLower();
         }
     }

@@ -2,7 +2,7 @@
 {
     public static class UserPrompts
     {
-        #region Prompts for user input for car brand, model etc.
+        #region Prompts til user at de skal indtaste mærke, model osv
         public const string CarBrand = "Indtast bilmærke: ";
         public const string CarModel = "Indtast bilmodel: ";
         public const string CarYear = "Indtast bilens årgang: ";
@@ -10,7 +10,7 @@
                                                     "\nHvis bilen ikke har været synet før tast 0000: ";
         #endregion
 
-        #region Prompts for if the Car needs Inspection or not
+        #region Prompts til user om bilen skal synes eller ej
         public const string NeedsInspection = "Bilen skal til syn.";
         public const string DoesntNeedsInspection = "Bilen skal IKKE til syn.";
         #endregion
