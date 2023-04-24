@@ -1,6 +1,6 @@
 ﻿namespace AutoRepairShop.UI.Prompts
 {
-    public class UserPrompts
+    public static class UserPrompts
     {
         #region Prompts for user input for car brand, model etc.
         public const string CarBrand = "Indtast bilmærke: ";

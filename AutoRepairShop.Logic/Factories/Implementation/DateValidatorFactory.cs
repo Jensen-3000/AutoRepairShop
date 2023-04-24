@@ -7,7 +7,7 @@ namespace AutoRepairShop.Logic.Factories.Implementation
     {
         public DateValidator Create()
         {
-            return new DateValidator();
+            return new DateValidator(DateTime.Now);
         }
     }
 }

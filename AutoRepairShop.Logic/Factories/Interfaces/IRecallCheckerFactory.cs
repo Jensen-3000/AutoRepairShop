@@ -4,6 +4,6 @@ namespace AutoRepairShop.Logic.Factories.Interfaces
 {
     public interface IRecallCheckerFactory
     {
-        RecallChecker Create(RecalledCars database);
+        RecallChecker Create(RecalledCarsData database);
     }
 }

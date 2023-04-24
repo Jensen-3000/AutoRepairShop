@@ -5,7 +5,7 @@ namespace AutoRepairShop.Logic.Factories.Implementation
 {
     public class RecallCheckerFactory : IRecallCheckerFactory
     {
-        public RecallChecker Create(RecalledCars database)
+        public RecallChecker Create(RecalledCarsData database)
         {
             return new RecallChecker(database);
         }
