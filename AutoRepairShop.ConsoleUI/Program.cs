@@ -5,5 +5,6 @@ using AutoRepairShop.Logic.TypeGrouping;
 //consoleFlow.Run();
 
 ArrayTests array = new ArrayTests();
-var test = array.ObjSamling();
-Console.WriteLine();
+array.ObjSamling();
+
+Console.ReadLine();

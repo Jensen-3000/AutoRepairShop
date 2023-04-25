@@ -42,8 +42,8 @@ namespace AutoRepairShop.Logic.TypeGrouping
             new DateTime(2020,12,31)
             };
 
-            DateTime strDato = (DateTime)objSamling[2].ToString("dd/MM/yyyy");
-            Console.WriteLine($"Value: {strDato}");
+            string strDato = $"Dato er: {(DateTime)objSamling[2]:dd/MM/yyyy}";
+            Console.WriteLine(strDato);
         }
     }
 }
